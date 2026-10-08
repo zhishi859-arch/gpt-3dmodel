@@ -1,0 +1,121 @@
+{
+  "reference": "User-supplied 水母.mp4, duration 4.04 s. Observed fast bell squeeze, upward thrust, slower recovery and trailing strand lag.",
+  "base_height_m": 8,
+  "includes_base": false,
+  "hard_ribbon_surfaces_removed": true,
+  "S_band_particle_count": 6720,
+  "particle_opacity": 0.52,
+  "full_loop_seconds": 8,
+  "pulse_period_seconds": 2.6666666666666665,
+  "squeeze_fraction_of_pulse": 0.24,
+  "release_fraction_of_pulse": 0.76,
+  "vertical_excursion_m": 0.48,
+  "core_deformation_modifiers": 0,
+  "native_fps": 24,
+  "frames": [
+    1,
+    192
+  ],
+  "samples": [
+    {
+      "frame": 1,
+      "pulse": 0.0,
+      "float_z": -0.20000000298023224,
+      "particle_horizontal_diameter": 4.300592041686862,
+      "core_scale": [
+        1.0635775327682495,
+        1.0805832147598267,
+        1.0270270109176636
+      ]
+    },
+    {
+      "frame": 9,
+      "pulse": 0.5312319155092593,
+      "float_z": 0.05499131977558136,
+      "particle_horizontal_diameter": 3.831674681418726,
+      "core_scale": [
+        1.0635775327682495,
+        1.0805832147598267,
+        1.0270270109176636
+      ]
+    },
+    {
+      "frame": 17,
+      "pulse": 0.999485165476017,
+      "float_z": 0.2797528803348541,
+      "particle_horizontal_diameter": 2.775992649970405,
+      "core_scale": [
+        1.0635775327682495,
+        1.0805832147598267,
+        1.0270270109176636
+      ]
+    },
+    {
+      "frame": 33,
+      "pulse": 0.7289692374981775,
+      "float_z": 0.1499052345752716,
+      "particle_horizontal_diameter": 2.93343036040406,
+      "core_scale": [
+        1.0635775327682495,
+        1.0805832147598267,
+        1.0270270109176636
+      ]
+    },
+    {
+      "frame": 49,
+      "pulse": 0.2534307114739759,
+      "float_z": -0.07835325598716736,
+      "particle_horizontal_diameter": 3.644349132386024,
+      "core_scale": [
+        1.0635775327682495,
+        1.0805832147598267,
+        1.0270270109176636
+      ]
+    },
+    {
+      "frame": 65,
+      "pulse": 0.0,
+      "float_z": -0.20000000298023224,
+      "particle_horizontal_diameter": 4.2098141643136096,
+      "core_scale": [
+        1.0635775327682495,
+        1.0805832147598267,
+        1.0270270109176636
+      ]
+    },
+    {
+      "frame": 97,
+      "pulse": 0.7289692374981775,
+      "float_z": 0.1499052345752716,
+      "particle_horizontal_diameter": 3.089133377216369,
+      "core_scale": [
+        1.0635775327682495,
+        1.0805832147598267,
+        1.0270270109176636
+      ]
+    },
+    {
+      "frame": 145,
+      "pulse": 0.999485165476017,
+      "float_z": 0.2797528803348541,
+      "particle_horizontal_diameter": 2.790905973605384,
+      "core_scale": [
+        1.0635775327682495,
+        1.0805832147598267,
+        1.0270270109176636
+      ]
+    },
+    {
+      "frame": 193,
+      "pulse": 0.0,
+      "float_z": -0.20000000298023224,
+      "particle_horizontal_diameter": 4.300592041686862,
+      "core_scale": [
+        1.0635775327682495,
+        1.0805832147598267,
+        1.0270270109176636
+      ]
+    }
+  ],
+  "loop_closure_verified": true
+}
