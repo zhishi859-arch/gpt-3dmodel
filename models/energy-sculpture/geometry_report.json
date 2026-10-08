@@ -1,0 +1,7 @@
+{
+  "height_m": 8,
+  "model_objects": 118,
+  "vertices": 182628,
+  "non_manifold_objects": [],
+  "note": "Separate overlapping closed parts; not Boolean-unioned for printing. Back geometry inferred from front reference."
+}
