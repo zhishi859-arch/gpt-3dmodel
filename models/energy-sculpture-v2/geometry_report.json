@@ -1,0 +1,21 @@
+{
+  "dimensions_xyz_m": [
+    6.500000238418579,
+    6.500000238418579,
+    8.0
+  ],
+  "rest_pose_frame": 1,
+  "model_objects": 179,
+  "vertices": 231810,
+  "non_manifold_objects": [],
+  "primary_ribbons": 5,
+  "raised_ribbon_veins": 25,
+  "companion_filaments": 15,
+  "closed_orbits": 10,
+  "animated_orbit_spheres": 20,
+  "animation_frames": [
+    1,
+    241
+  ],
+  "note": "Multi-view concept reconstruction, independent closed solids with intersections; no manufacturing Boolean union."
+}
