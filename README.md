@@ -1,6 +1,6 @@
 # gpt-3dmodel
 
-最新版本：[光核 · 柔性水流运动](models/light-core-organic/README.md)。8 米光核，不含底座，核心固定尺寸，外围各光带独立卷曲与错相收缩。
+最新版本：[光核 · 柔性水流运动](models/light-core-organic/README.md)。8 米光核，不含底座，核心固定尺寸，外围各光带独立卷曲与错相收缩。最新调整：形变幅度 ×2，收缩舒张速度 +30%。
 
 ![最新光核运动预览](models/light-core-organic/preview_organic.gif)
 

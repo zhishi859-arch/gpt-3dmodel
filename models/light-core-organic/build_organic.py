@@ -14,7 +14,7 @@ bpy.data.objects.remove(outer,do_unlink=True)
 bpy.data.objects.remove(bands,do_unlink=True)
 # Each cage has independent phased, height-dependent currents and local contraction.
 cages=bpy.data.collections.new('INDEPENDENT_WATER_CURRENTS');scene.collection.children.link(cages)
-P='((frame-1)*.02617993878)'
+P='((frame-1)*.034033920414)'
 config=[]
 def cage(name,k,orbit=False):
     data=bpy.data.lattices.new(name);data.points_u=3 if not orbit else 2;data.points_v=3 if not orbit else 2;data.points_w=11 if not orbit else 9
@@ -32,6 +32,9 @@ def cage(name,k,orbit=False):
         ez=f'{z}+{round(env*.017*spans[2],6)}*sin({P}+{ph}-5.2*{zn})+{round(env*.007*spans[2],6)}*sin(2*{P}+{ph}+2*{zn})'
         for i,expr in enumerate([ex,ey,ez]):
             assert len(expr)<250,(len(expr),expr)
+            base=round(float(pt.co[i]),5)
+            expr=f'{base}+2*(({expr})-({base}))'
+            assert len(expr)<255
             d=pt.driver_add('co_deform',i).driver;d.type='SCRIPTED';d.expression=expr
     return ob
 band_cages=[cage('Band %02d | traveling current'%(k+1),k) for k in range(5)]
@@ -80,6 +83,10 @@ m=bpy.data.materials['Satin silver shell'];m.node_tree.nodes['Principled BSDF'].
 # The rendered core is still spherical and invariant; turntable-like self-spin remains.
 scene.camera.location=(7,-19,3.2);scene.camera.rotation_euler=(-scene.camera.location).to_track_quat('-Z','Y').to_euler();scene.camera.data.ortho_scale=10.1
 scene.cycles.samples=128;scene.render.resolution_x=896;scene.render.resolution_y=1120
+for action in bpy.data.actions:
+    for fc in action.fcurves:
+        if not any(m.type=='CYCLES' for m in fc.modifiers):fc.modifiers.new('CYCLES')
+scene.frame_end=2400
 scene.frame_set(1);bpy.context.view_layer.update()
 bpy.ops.wm.save_as_mainfile(filepath=str(OUT/'light_core_organic.blend'))
 # Check fixed core volume/scale and independent, spatially varying ribbon deformation.
@@ -98,7 +105,7 @@ for r in rows:assert max(abs(a-b) for a,b in zip(r['core_scale'],rows[0]['core_s
 assert all(not o.modifiers for o in [core]),'Core must remain undeformed'
 assert all((Vector(rows[0]['ribbons'][i]['vertex_samples'][1])-Vector(rows[2]['ribbons'][i]['vertex_samples'][1])).length>.01 for i in range(5))
 assert all(fc.is_valid for c in band_cages+orbit_cages for fc in c.data.animation_data.drivers),'Invalid water-current driver'
-report={'core_fixed_scale':True,'core_deformation_modifiers':len(core.modifiers),'uniform_parent_scaling_removed':True,'independent_band_currents':5,'independent_orbit_currents':10,'period_seconds':10,'base_height_m':8,'includes_base':False,'cages':config,'samples':rows}
+report={'core_fixed_scale':True,'core_deformation_modifiers':len(core.modifiers),'uniform_parent_scaling_removed':True,'independent_band_currents':5,'independent_orbit_currents':10,'peripheral_period_seconds':10/1.3,'full_repeat_seconds':100,'deformation_amplitude_multiplier':2,'peripheral_speed_multiplier':1.3,'base_height_m':8,'includes_base':False,'cages':config,'samples':rows}
 (OUT/'organic_motion_report.json').write_text(json.dumps(report,indent=2));print('ORGANIC_MOTION_VALIDATED',flush=True)
 if '--model-only' in sys.argv:sys.exit(0)
 scene.cycles.samples=16;scene.render.resolution_x=448;scene.render.resolution_y=560

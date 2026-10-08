@@ -1,0 +1,15 @@
+{
+  "deformation_amplitude_multiplier": 2,
+  "peripheral_speed_multiplier": 1.3,
+  "peripheral_period_seconds": 7.692307692307692,
+  "other_motion_period_seconds": 10,
+  "full_repeat_seconds": 100,
+  "timeline_frames": [
+    1,
+    2400
+  ],
+  "max_amplitude_verification_error": 5.057621821307283e-07,
+  "core_scale_fixed": true,
+  "preview_seconds": 10,
+  "preview_is_excerpt": true
+}
